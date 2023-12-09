@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaTech.POO.ProjetoExtra.CarRentingManagement", "AdaTech.POO.ProjetoExtra.CarRentingManagement\AdaTech.POO.ProjetoExtra.CarRentingManagement.csproj", "{4D7BF816-D7C9-4C4C-BBCD-049B2AB5601C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D7BF816-D7C9-4C4C-BBCD-049B2AB5601C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7BF816-D7C9-4C4C-BBCD-049B2AB5601C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7BF816-D7C9-4C4C-BBCD-049B2AB5601C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7BF816-D7C9-4C4C-BBCD-049B2AB5601C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62779EB9-5694-4710-9AAC-B880E2EDFAC3}
+	EndGlobalSection
+EndGlobal
