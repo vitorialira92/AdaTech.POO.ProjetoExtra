@@ -1,5 +1,6 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Data;
 using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,11 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
     {
         public static void InitRepository() { DataCollector.GetAllVehicles(); }
 
-        public static bool AddVehicle(Vehicle Vehicle) { return VehiclesRepository.AddVehicle(Vehicle); }
+        public static bool AddVehicle(Vehicle vehicle) { return VehiclesRepository.AddVehicle(vehicle); }
 
-        public static Vehicle GetVehicleById(decimal VehicleId) { return VehiclesRepository.GetVehicleById(VehicleId); }
-        public static Vehicle GetVehicleByCPF(string VehicleCPF) { return VehiclesRepository.GetVehicleByCPF(VehicleCPF); }
+        public static Vehicle GetVehicleById(decimal vehicleId) { return VehiclesRepository.GetVehicleById(vehicleId); }
 
-        public static bool RemoveVehicle(Vehicle Vehicle) { return VehiclesRepository.RemoveVehicle(Vehicle); }
+        public static bool RemoveVehicle(Vehicle vehicle) { return VehiclesRepository.RemoveVehicle(vehicle); }
 
         public static string ListAllVehicles()
         {
