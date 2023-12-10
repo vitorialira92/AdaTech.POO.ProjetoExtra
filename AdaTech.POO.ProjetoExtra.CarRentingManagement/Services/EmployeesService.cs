@@ -1,5 +1,5 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Data;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.model;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

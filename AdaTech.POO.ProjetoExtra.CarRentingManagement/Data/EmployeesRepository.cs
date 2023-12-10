@@ -36,5 +36,20 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
         {
             throw new NotImplementedException();
         }
+
+        internal static Employee Login(string email, string password)
+        {
+            foreach (var employee in employees)
+            {
+                if (employee.Email.Equals(email.ToLower()))
+                {
+                    if (employee.CheckPassword(password))
+                        return employee;
+                    return null;
+                }
+            }
+
+            return null;
+        }
     }
 }

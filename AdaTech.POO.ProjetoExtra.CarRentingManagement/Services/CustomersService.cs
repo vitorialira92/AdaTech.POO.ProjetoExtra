@@ -1,5 +1,5 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Data;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.model;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
 {
-    internal class VehiclesService
+    internal class CustomersService
     {
-        public static void InitRepository() { DataCollector.GetAllVehicles(); }
+        public static void InitRepository() { DataCollector.GetAllCustomers(); }
 
-        public static bool AddVehicle(Vehicle Vehicle) { return VehiclesRepository.AddVehicle(Vehicle); }
+        public static bool AddCustomer(Customer Customer) { return CustomerRepository.AddCustomer(Customer); }
 
-        public static Vehicle GetVehicleById(decimal VehicleId) { return VehiclesRepository.GetVehicleById(VehicleId); }
-        public static Vehicle GetVehicleByCPF(string VehicleCPF) { return VehiclesRepository.GetVehicleByCPF(VehicleCPF); }
+        public static Customer GetCustomerById(decimal CustomerId) { return CustomerRepository.GetCustomerById(CustomerId); }
+        public static Customer GetCustomerByCPF(string CustomerCPF) { return CustomerRepository.GetCustomerByCPF(CustomerCPF); }
 
-        public static bool RemoveVehicle(Vehicle Vehicle) { return VehiclesRepository.RemoveVehicle(Vehicle); }
+        public static bool RemoveCustomer(Customer Customer) { return CustomerRepository.RemoveCustomer(Customer); }
 
-        public static string ListAllVehicles()
+        public static string ListAllCustomers()
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("===================================\n=          AUTOJOURNEY            =" +
                 "\n===================================");
-            stringBuilder.Append(VehiclesRepository.GetAllVehiclesToString());
+            stringBuilder.Append(CustomerRepository.GetAllCustomersToString());
             return stringBuilder.ToString();
         }
     }

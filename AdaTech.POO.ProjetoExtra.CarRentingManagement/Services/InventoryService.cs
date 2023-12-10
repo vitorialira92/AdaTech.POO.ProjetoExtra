@@ -1,5 +1,5 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Data;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.model;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
             stringBuilder.Append(VehiclesRepository.GetAllVehiclesToString());
             return stringBuilder.ToString();
         }
-
+       
         public static List<Vehicle> GetAllAvailableVehicles() { return VehiclesRepository.GetAllAvailableVehicles(); }
     }
 }

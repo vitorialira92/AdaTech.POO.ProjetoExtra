@@ -1,4 +1,4 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals;
 using System;
 using System.Collections.Generic;
 using System.Linq;
