@@ -24,7 +24,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
             this.CPF = CPF;
             this.Name = name;
             this.PhoneNumber = phoneNumber;
-            this.Email = email;
+            this.Email = email.ToLower();
             if(address == null)
                 throw new ArgumentNullException(nameof(address), "Address cannot be null.");
             this.Address = address;
