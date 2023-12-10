@@ -29,9 +29,9 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
 
         public override string ToString()
         {
-            string employee = $"Manager {Name} ID {Id}| {Department.ToString()} : {Position}";
+            string manager = $"Manager {Name} ID {Id}| {Department.ToString()} : {Position}";
 
-            return employee;
+            return manager;
         }
     }
 }
