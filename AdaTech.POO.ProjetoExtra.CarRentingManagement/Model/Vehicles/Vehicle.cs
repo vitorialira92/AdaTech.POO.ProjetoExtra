@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement.model
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Vehicles
 {
     using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Vehicle;
 
@@ -76,6 +76,6 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement.model
             return $"{brand} {model} {year} | {color}\n{type} : {seats} seats\nPrice per day: ${pricePerDay} | {status}";
         }
 
-        public CarStatus GetCarStatus() { return this.status; }
+        public CarStatus GetCarStatus() { return status; }
     }
 }

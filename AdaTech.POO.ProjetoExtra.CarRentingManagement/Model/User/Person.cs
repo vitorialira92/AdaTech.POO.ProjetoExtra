@@ -1,7 +1,7 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.RentalManagement.PaymentManagement;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +18,8 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User
         public Address Address { get; private set; }
         private string _hashedPassword;
 
-        protected Person(decimal id, string CPF, string name, string phoneNumber, string email, Address address, string password)
+        protected Person(string CPF, string name, string phoneNumber, string email, Address address, string password)
         {
-            Id = id;
             this.CPF = CPF;
             Name = name;
             PhoneNumber = phoneNumber;
@@ -29,7 +28,24 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User
                 throw new ArgumentNullException(nameof(address), "Address cannot be null.");
             Address = address;
             SavePassword(password);
+            Id = GenerateId();
         }
+
+        private decimal GenerateId()
+        {
+            string currentDate = DateTime.Now.ToString("yyyyMMdd");
+            string toBeHashed = $"{CPF}-{currentDate}";
+
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(toBeHashed));
+                long extractedNumber = BitConverter.ToInt32(bytes, 0);
+                extractedNumber = Math.Abs(extractedNumber) % 1000000;
+
+                return (decimal)extractedNumber; 
+            }
+        }
+
         protected Person(decimal id, string CPF, string name, string phoneNumber, string email, Address address, string password, string mode)
         {
             Id = id;

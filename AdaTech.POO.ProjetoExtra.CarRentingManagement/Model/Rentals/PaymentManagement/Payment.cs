@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental.PaymentManagement
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals.PaymentManagement
 {
-    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Rental;
+    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Payment;
 
     internal class Payment
     {

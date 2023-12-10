@@ -27,5 +27,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
             stringBuilder.Append(EmployeesRepository.GetAllEmployeesToString());
             return stringBuilder.ToString();
         }
+
+        internal static bool AddManager(Manager manager) { return EmployeesRepository.AddManager(manager); }
     }
 }

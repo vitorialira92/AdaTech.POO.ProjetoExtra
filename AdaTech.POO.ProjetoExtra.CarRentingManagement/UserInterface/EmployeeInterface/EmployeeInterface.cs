@@ -1,4 +1,5 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,14 +60,14 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface.EmployeeIn
                 Console.WriteLine("===================================");
                 Console.WriteLine("===================================");
                 Console.WriteLine("Please type your email: ");
-                string email = Utils.ReadString("email");
+                string email = Utils.ReadString("emailCompany");
                 Console.WriteLine("===================================");
                 Console.WriteLine("Please type your password: ");
                 string password = Utils.ReadString();
 
-                return TryToLogin(email, password);
-                else
-                    leaveInitialMenu = true;
+                //return TryToLogin(email, password);
+               // else
+                    //leaveInitialMenu = true;
             }
 
             return false;

@@ -15,9 +15,9 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User
 
         protected decimal MinimumSalary = 1500;
 
-        public Employee(decimal id, string CPF, string name, string phoneNumber,
+        public Employee(string CPF, string name, string phoneNumber,
             string email, Address address, string password, Department department, string position, decimal salary)
-                : base(id, CPF, name, phoneNumber, email, address, password)
+                : base(CPF, name, phoneNumber, email, address, password)
         {
             Department = department;
             Position = position;

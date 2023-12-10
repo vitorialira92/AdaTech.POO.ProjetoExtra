@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Rental;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Payment;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental.PaymentManagement
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals.PaymentManagement
 {
     internal class CreditCard
     {

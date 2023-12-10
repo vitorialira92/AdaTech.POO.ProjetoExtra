@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement.Enums
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Vehicle
 {
     internal enum CarBrand
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,8 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Utilities
 
                 if (restriction == "emailCompany")
                     validString = word.Contains("@vj.com");
-
+                else if (restriction == "email")
+                    validString = word.Contains('@') && word.Contains(".com") && !word.Contains(' ');
                 if (!validString)
                     Console.WriteLine("Please type a valid input");
             }
@@ -66,5 +68,24 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Utilities
             return word.ToUpper().Equals("Y");
         }
 
+        internal static BrazilStates ReadBrazilState()
+        {
+            string word = "";
+            bool validState = false;
+            
+            BrazilStates brazilState = new BrazilStates();
+
+            while (!validState)
+            {
+                word = Console.ReadLine();
+
+                validState = Enum.TryParse(word, ignoreCase: true, out brazilState);
+
+                if (!validState)
+                    Console.WriteLine("Please type a valid input");
+            }
+
+            return brazilState;
+        }
     }
 }

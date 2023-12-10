@@ -1,6 +1,5 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Data;
 using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
         public static bool AddRental(Rental Rental) { return RentalRepository.AddRental(Rental); }
 
         public static Rental GetRentalById(decimal rentalId) { return RentalRepository.GetRentalById(rentalId); }
-        public static Rental GetRentalByVehicleId(string VehicleId) { return RentalRepository.GetRentalByVehicleId(VehicleId); }
+        public static List<Rental> GetRentalsByVehicleId(decimal VehicleId) { return RentalRepository.GetRentalsByVehicleId(VehicleId); }
 
         public static bool RemoveRental(Rental rental) { return RentalRepository.RemoveRental(rental); }
 

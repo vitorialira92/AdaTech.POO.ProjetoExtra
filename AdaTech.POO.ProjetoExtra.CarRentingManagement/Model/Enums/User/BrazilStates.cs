@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.Enums
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.User
 {
     internal enum BrazilStates
     {

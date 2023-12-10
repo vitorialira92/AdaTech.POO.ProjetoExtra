@@ -1,6 +1,4 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Exceptions;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.RentalManagement.PaymentManagement;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +11,9 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User
     internal class Manager : Employee
     {
         public decimal Bonus { get; private set; }
-        public Manager(decimal bonus, decimal id, string CPF, string name, string phoneNumber, string email,
+        public Manager(decimal bonus, string CPF, string name, string phoneNumber, string email,
             Address address, string password, Department department, string position, decimal salary)
-                : base(id, CPF, name, phoneNumber, email, address, password, department, position, salary)
+                : base( CPF, name, phoneNumber, email, address, password, department, position, salary)
         {
             Bonus = bonus;
             MinimumSalary = 3000;

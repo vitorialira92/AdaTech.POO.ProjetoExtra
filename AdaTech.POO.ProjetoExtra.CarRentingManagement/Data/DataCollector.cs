@@ -1,9 +1,8 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.Enums;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement.model;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement.Enums;
-using AdaTech.POO.ProjetoExtra.CarRentingManagement.VehicleManagement.model;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.User;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Vehicle;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Vehicles;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +46,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
                     );
                 
 
-                VehiclesManagement.AddVehicle(vehicle);
+                InventoryService.AddVehicle(vehicle);
             }
         }
 
@@ -83,7 +82,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
                         decimal.Parse(values[12]));
 
 
-                EmployeesManagement.AddEmployee(employee);
+                EmployeesService.AddEmployee(employee);
             }
         }
 
@@ -120,13 +119,18 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
                         decimal.Parse(values[13]));
 
 
-                EmployeesManagement.AddManager(manager);
+                EmployeesService.AddManager(manager);
             }
         }
 
         internal static void GetAllRentals()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
-    }
+
+        internal static void GetAllCustomers()
+        {
+            //throw new NotImplementedException();
+        }
+    }//C:\Users\vitoria\Desktop\estágio\curso\modulo 2\AdaTech.POO.ProjetoExtra\AdaTech.POO.ProjetoExtra.CarRentingManagement\Services\
 }

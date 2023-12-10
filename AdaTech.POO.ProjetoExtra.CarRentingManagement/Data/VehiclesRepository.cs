@@ -1,4 +1,6 @@
-﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Vehicle;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.User;
+using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +12,13 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
     internal static class VehiclesRepository
     {
         private static List<Vehicle> allVehicles = new List<Vehicle>();
-        public static List<Vehicle> AllAvailableVehicles()
+        public static List<Vehicle> GetAllAvailableVehicles()
         {
             List<Vehicle> availableVehicles = new List<Vehicle>();
 
             foreach (Vehicle vehicle in allVehicles)
             {
-                if (!rentedVehiclesId.Contains(vehicle.Id))
+                if (vehicle.GetCarStatus().Equals(CarStatus.Available))
                     availableVehicles.Add(vehicle);
             }
 
@@ -40,6 +42,35 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
             }
 
             return 0;
+        }
+
+        internal static bool AddVehicle(Vehicle vehicle)
+        {
+            if (vehicle == null) return false;
+            allVehicles.Add(vehicle); return true;
+        }
+
+        internal static string GetAllVehiclesToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("===================================\n" +
+                        "=          AUTOJOURNEY            =");
+            foreach(Vehicle vehicle in allVehicles)
+            {
+                sb.Append(vehicle.ToString() + "\n===================================\n");
+            }
+
+            return sb.ToString();
+        }
+
+        internal static bool RemoveVehicle(Vehicle vehicle)
+        {
+            if (allVehicles.Contains(vehicle))
+            {
+                allVehicles.Remove(vehicle);
+                return true;
+            }
+            return false;
         }
     }
 }

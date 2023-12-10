@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals
 {
-    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental.PaymentManagement;
+    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Rental;
+    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals.PaymentManagement;
+    using AdaTech.POO.ProjetoExtra.CarRentingManagement.Services;
+
     internal class Rental
     {
-        private readonly decimal id;
-        private readonly decimal VehicleId;
-        private readonly decimal vehicleId;
+        private readonly decimal _id;
+        private readonly decimal _vehicleId;
+        private readonly decimal _customerId;
         private readonly DateTime startDate;
         private DateTime endDate;
         private double cost;
@@ -20,12 +23,16 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental
         private VehicleCondition vehicleCondition;
         private Payment payment;
 
-        public Rental(decimal id, decimal VehicleId, decimal vehicleId,
+        public decimal Id { get { return _id; } private set { } }
+        public decimal VehicleId { get { return _vehicleId; } private set { } }
+        public decimal CustomerId { get { return _customerId; } private set { } }
+
+        public Rental(decimal id, decimal vehicleId, decimal customerId,
             DateTime startDate, double initialMileage, double finalMileage, Payment payment)
         {
-            this.id = id;
-            this.VehicleId = VehicleId;
-            this.vehicleId = vehicleId;
+            this._id = id;
+            this._vehicleId = vehicleId;
+            this._customerId = customerId;
             this.startDate = startDate;
             this.initialMileage = initialMileage;
             this.finalMileage = finalMileage;
@@ -48,7 +55,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rental
 
             int howManyDaysTheRentalLasted = (int)Math.Ceiling(difference.TotalDays);
 
-            cost = Inventory.GetVehiclePricePerDayById(vehicleId) * howManyDaysTheRentalLasted;
+            cost = InventoryService.GetVehiclePricePerDayById(VehicleId) * howManyDaysTheRentalLasted;
         }
     }
 }

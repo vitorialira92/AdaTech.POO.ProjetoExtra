@@ -7,4 +7,29 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="UserInterface\VehicleInterface\**" />
+    <EmbeddedResource Remove="UserInterface\VehicleInterface\**" />
+    <None Remove="UserInterface\VehicleInterface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserInterface\Vehicles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\Files\Vehicles.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Files\Employees.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Files\Managers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\Files\Vehicles.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

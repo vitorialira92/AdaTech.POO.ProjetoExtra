@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Rental
+namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Payment
 {
     internal enum PaymentStatus
     {

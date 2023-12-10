@@ -27,5 +27,10 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
             stringBuilder.Append(CustomerRepository.GetAllCustomersToString());
             return stringBuilder.ToString();
         }
+
+        internal static Customer Login(string email, string password)
+        {
+            return CustomerRepository.Login(email, password);
+        }
     }
 }
