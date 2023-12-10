@@ -8,7 +8,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
 {
     internal static class Utils
     {
-        public static int ReadInteger(int b, int e)
+        public static int ReadInteger(int b = -55, int e = -55)
         {
             int number = 0;
             bool validNumber = false;
@@ -16,6 +16,9 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
             while(!validNumber)
             {
                 validNumber = int.TryParse(Console.ReadLine(), out number);
+
+                if (b != e && b != -55)
+                    validNumber = number >= b && number <=e;
 
                 if (!validNumber)
                     Console.WriteLine("Please type a valid number");
