@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.RentalManagement.PaymentManagement;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -24,6 +25,8 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
             this.Name = name;
             this.PhoneNumber = phoneNumber;
             this.Email = email;
+            if(address == null)
+                throw new ArgumentNullException(nameof(address), "Address cannot be null.");
             this.Address = address;
             SavePassword(password);
         }
