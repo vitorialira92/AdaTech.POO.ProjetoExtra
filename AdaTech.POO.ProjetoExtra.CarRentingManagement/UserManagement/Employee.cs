@@ -30,9 +30,10 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
         public void UpdateSalary(decimal salary)
         {
             if (salary == 0)
-                throw new EmptyValueException("Salary cannot be zero.");
+                throw new InvalidValueException("Salary cannot be zero.");
 
-
+            if(!IsSalaryBeyondMinimum(salary))
+                throw new InvalidValueException("Salary cannot be zero.");
 
             Salary = salary;
         }
