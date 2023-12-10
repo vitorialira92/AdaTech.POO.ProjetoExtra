@@ -27,7 +27,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
             return number;
         }
 
-        public static string ReadString()
+        public static string ReadString(string restriction = null)
         {
             string word = "";
             bool validString = false;
@@ -37,6 +37,9 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
                 word = Console.ReadLine();
 
                 validString = !string.IsNullOrEmpty(word) && !string.IsNullOrWhiteSpace(word);
+
+                if(restriction == "email")
+                    validString = word.Contains("@vj.com");
 
                 if (!validString)
                     Console.WriteLine("Please type a valid input");
