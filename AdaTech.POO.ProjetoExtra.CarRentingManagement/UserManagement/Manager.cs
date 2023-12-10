@@ -18,12 +18,13 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
                 : base(id, CPF, name, phoneNumber, email, address, password, department, position, salary)
         {
             this.Bonus = bonus;
+            this.MinimumSalary = 3000;
         }
 
         public void UpdateBonus(decimal bonus)
         {
             if(bonus == 0)
-                throw new EmptyValueException("Bonus cannot be zero.");
+                throw new InvalidValueException("Bonus cannot be zero.");
             this.Bonus = bonus;
         }
 
