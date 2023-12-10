@@ -27,6 +27,11 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
             this.Bonus = bonus;
         }
 
+        public override string ToString()
+        {
+            string employee = $"Manager {Name} ID {Id}| {Department.ToString()} : {Position}";
 
+            return employee;
+        }
     }
 }
