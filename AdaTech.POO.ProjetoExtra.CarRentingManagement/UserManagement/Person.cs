@@ -72,5 +72,6 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserManagement
             this.Address = address;
         }
 
+        public abstract override string ToString();
     }
 }
