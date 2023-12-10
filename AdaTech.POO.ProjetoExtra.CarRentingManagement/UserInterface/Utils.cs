@@ -47,5 +47,24 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
 
             return word;
         }
+    
+        public static bool ReadYOrN()
+        {
+            string word = "";
+            bool validString = false;
+
+            while (!validString)
+            {
+                word = Console.ReadLine();
+
+                validString = word.ToUpper().Equals("Y") || word.ToUpper().Equals("N");
+
+                if (!validString)
+                    Console.WriteLine("Please type Y or N");
+            }
+
+            return word.ToUpper().Equals("Y");
+        }
+
     }
 }
