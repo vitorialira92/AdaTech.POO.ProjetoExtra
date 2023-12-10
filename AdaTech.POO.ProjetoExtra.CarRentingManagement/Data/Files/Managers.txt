@@ -1,0 +1,8 @@
+﻿5673.53,18258374,938.254.761-46,João Felipe Moraes,41 5702 7900,barbara05@vj.com,Vale Maria Sophia Moraes,Melo de Monteiro,21,06075797,9kMlopAnCUku071uayNgmHxqIAYLyjeLG/F6W/unm7bvSXprOV1IY8xP5I+75g==,1,Manager,14484.73
+6203.86,82698510,320.184.659-70,Lívia da Cunha,+55 (081) 0980-7320,ana-lauragomes@vj.com,Morro Ana Beatriz Teixeira,Nunes da Praia,15,70326434,ymquRWcL6nM1gt/ktzN7kBGj5l24+M34t46wAvWHSb9C8ygkaoQ3kquEjdvhBg==,2,Manager,10387.63
+5525.66,80824845,286.530.479-56,Ana Julia Nogueira,(051) 5582-7407,tbarros@vj.com,Jardim Monteiro,Jesus,8,73173-372,hOERXpLqXKt5dLUuEiHrddU1cX12tBzS++OfxcpZz8GCKUY2Zdji+e0CsSeyFw==,3,Manager,11512.32
+8437.98,50430886,610.972.485-85,Brenda Azevedo,+55 (084) 5381-3050,ribeirojoaquim@vj.com,Campo Pinto,da Conceição de Viana,12,92660179,tOjDT6CRZOrP/zHLaTlQrsvZhmLoen/TC44tfpG7MchOHc5qb7rdvf7b0i0YLA==,4,Manager,11942.2
+7580.33,44977316,946.023.857-29,Emilly da Cruz,0500-484-8370,joao-vitor16@vj.com,Colônia Lopes,Fogaça de Santos,15,70247-997,PMxCshigPB93mi4JXxsgnHQbUwQJhuL5sWEr113/wdFthfYlVdOukRkVu2CwTg==,5,Manager,8849.87
+6597.99,35085657,392.647.108-50,Lívia Costela,0500-859-5973,bnunes@vj.com,Ladeira Freitas,Araújo,17,03752183,xxNWCPFRFSs+m3fUYq3Hz+6GcQF8plvTq8lsg4ENDzkluMnrjHiugemeRN0EZw==,6,Manager,7881.97
+5827.87,80012184,027.351.948-41,Olivia Silveira,+55 (061) 9308-1906,andreda-conceicao@vj.com,Vila Costa,Duarte,24,04882-147,k1o/jFuHeK2W3fPPnCLVMBxrl+HixJE5RpPBHrNk/xhCzPVrpoTVOb4sCCAunQ==,7,Manager,14407.35
+5351.85,84474353,953.041.762-43,Daniel Melo,(051) 3133-4372,leticia61@vj.com,Largo Enzo Gabriel Caldeira,Aragão,4,62484-627,YBuUp5rGINWgFxEaRORazVdKMM19EHFI5ZE3rBByukhYR2W+780q/ku49ow7KA==,8,Manager,7857.15
