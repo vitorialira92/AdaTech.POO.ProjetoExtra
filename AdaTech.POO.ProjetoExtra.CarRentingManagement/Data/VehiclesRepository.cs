@@ -50,6 +50,19 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
             allVehicles.Add(vehicle); return true;
         }
 
+        internal static List<Vehicle> GetAllReservedVehicles()
+        {
+            List<Vehicle> reservedVehicles = new List<Vehicle>();
+
+            foreach (Vehicle vehicle in allVehicles)
+            {
+                if (vehicle.GetCarStatus().Equals(CarStatus.Reserved))
+                    reservedVehicles.Add(vehicle);
+            }
+
+            return reservedVehicles;
+        }
+
         internal static string GetAllVehiclesToString()
         {
             StringBuilder sb = new StringBuilder();

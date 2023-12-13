@@ -15,17 +15,20 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals
         private readonly decimal _id;
         private readonly decimal _vehicleId;
         private readonly decimal _customerId;
-        private readonly DateTime startDate;
-        private DateTime endDate;
-        private double cost;
-        private double initialMileage;
-        private double finalMileage;
-        private VehicleCondition vehicleCondition;
-        private Payment payment;
+        private readonly DateTime _startDate;
+        private DateTime _endDate;
+        private double _cost;
+        private double _initialMileage;
+        private double _finalMileage;
+        private VehicleCondition _vehicleCondition;
+        private Payment _payment;
 
         public decimal Id { get { return _id; } private set { } }
         public decimal VehicleId { get { return _vehicleId; } private set { } }
         public decimal CustomerId { get { return _customerId; } private set { } }
+
+        public DateTime StartDate { get { return _startDate; } private set { } }
+        public DateTime EndDate { get { return _endDate; } private set { } }
 
         public Rental(decimal id, decimal vehicleId, decimal customerId,
             DateTime startDate, double initialMileage, double finalMileage, Payment payment)
@@ -33,29 +36,42 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Rentals
             this._id = id;
             this._vehicleId = vehicleId;
             this._customerId = customerId;
-            this.startDate = startDate;
-            this.initialMileage = initialMileage;
-            this.finalMileage = finalMileage;
-            this.payment = payment;
+            this._startDate = startDate;
+            this._initialMileage = initialMileage;
+            this._finalMileage = finalMileage;
+            this._payment = payment;
+        }
+
+        public Rental(decimal id, decimal vehicleId, decimal customerId,
+            DateTime startDate, DateTime endDate, double initialMileage, double finalMileage, Payment payment)
+        {
+            this._id = id;
+            this._vehicleId = vehicleId;
+            this._customerId = customerId;
+            this._startDate = startDate;
+            this._endDate = endDate;
+            this._initialMileage = initialMileage;
+            this._finalMileage = finalMileage;
+            this._payment = payment;
         }
 
         public double EndRental(VehicleCondition vehicleCondition)
         {
-            this.vehicleCondition = vehicleCondition;
-            endDate = DateTime.Today;
+            this._vehicleCondition = vehicleCondition;
+            _endDate = DateTime.Today;
 
             CalculateCost();
 
-            return cost;
+            return _cost;
         }
 
         private void CalculateCost()
         {
-            TimeSpan difference = endDate - startDate;
+            TimeSpan difference = _endDate - _startDate;
 
             int howManyDaysTheRentalLasted = (int)Math.Ceiling(difference.TotalDays);
 
-            cost = InventoryService.GetVehiclePricePerDayById(VehicleId) * howManyDaysTheRentalLasted;
+            _cost = InventoryService.GetVehiclePricePerDayById(VehicleId) * howManyDaysTheRentalLasted;
         }
     }
 }

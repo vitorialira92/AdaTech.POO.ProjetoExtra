@@ -1,9 +1,11 @@
 ﻿using AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.User;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Utilities
 {
@@ -87,5 +89,29 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Utilities
 
             return brazilState;
         }
+
+        internal static DateTime ReadDateTime(string type, DateTime from)
+        {
+            string word = "";
+            bool validDate = false;
+
+            DateTime dateTime = new DateTime();
+
+            while (!validDate)
+            {
+                word = Console.ReadLine();
+
+                validDate = DateTime.TryParseExact(word, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime);
+
+                if (type.Equals("future")) { validDate = dateTime > from; }
+                else if (type.Equals("past")) { validDate = dateTime < from; }
+
+                if (!validDate)
+                    Console.WriteLine("Please type a valid input [dd/mm/yyyy]");
+            }
+
+            return dateTime;
+        }
+
     }
 }

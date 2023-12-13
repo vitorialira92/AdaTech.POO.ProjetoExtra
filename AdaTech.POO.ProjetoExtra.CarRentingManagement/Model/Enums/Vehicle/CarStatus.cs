@@ -9,7 +9,8 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Model.Enums.Vehicle
     internal enum CarStatus
     {
         Available = 1,
-        Rented = 2,
-        Maintenance = 3
+        Reserved = 2,
+        Rented = 3,
+        Maintenance = 4
     }
 }

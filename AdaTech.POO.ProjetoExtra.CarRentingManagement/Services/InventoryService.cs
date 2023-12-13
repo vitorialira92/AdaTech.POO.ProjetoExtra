@@ -31,9 +31,30 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
        
         public static List<Vehicle> GetAllAvailableVehicles() { return VehiclesRepository.GetAllAvailableVehicles(); }
 
+        public static List<Vehicle> GetAllReservedVehicles() { return VehiclesRepository.GetAllReservedVehicles(); }
+
         internal static double GetVehiclePricePerDayById(decimal vehicleId)
         {
             return GetVehicleById(vehicleId).PricePerDay;
+        }
+
+        internal static List<Vehicle> GetAllAvailableVehiclesInTimePeriod(DateTime from, DateTime to)
+        {
+            List<Vehicle> list = GetAllReservedVehicles();
+            List<Vehicle> result = new List<Vehicle>();
+
+            foreach (Vehicle v in list)
+            {
+                if (RentalService.IsThisVehicleAvailableInThisPeriod(v, from,to))
+                {
+                    result.Add(v);
+                }
+            }
+
+            result.AddRange(GetAllAvailableVehicles());
+
+            return result;
+
         }
     }
 }

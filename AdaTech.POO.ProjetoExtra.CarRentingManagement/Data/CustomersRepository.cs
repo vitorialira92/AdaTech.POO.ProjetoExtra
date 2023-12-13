@@ -14,8 +14,10 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Data
         internal static bool AddCustomer(Customer customer)
         {
             if(customer == null) return false;
-            _allCustomers.Add(customer); return true;
+            _allCustomers.Add(customer); SaveCustomerInTheFile(customer);  return true;
         }
+
+        private static void SaveCustomerInTheFile(Customer customer) {}
 
         internal static string GetAllCustomersToString()
         {

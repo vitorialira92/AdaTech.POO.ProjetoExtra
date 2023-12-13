@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
@@ -46,8 +47,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
             }
         }
 
-
-        private static void SeeAllAvailableVehicles()
+        private static void ShowAllAvailableVehicles()
         {
             Console.Clear();
             Console.WriteLine("=====================================");
@@ -56,7 +56,25 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
             Console.WriteLine("      ALL AVAILABLE VEHICLES");
             InventoryService.GetAllAvailableVehicles().ForEach(vehicle => { Console.WriteLine(vehicle.ToString() + "\n----"); });
             Console.WriteLine("=====================================");
-            Console.WriteLine("Type Y or N");
+        }
+
+        private static void ShowAllAvailableVehiclesInTimePeriod(DateTime from, DateTime to)
+        {
+            Console.Clear();
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=          AUTOJOURNEY              =");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("      ALL AVAILABLE VEHICLES");
+            InventoryService.GetAllAvailableVehiclesInTimePeriod(from, to).ForEach(vehicle => { Console.WriteLine(vehicle.ToString() + "\n----"); });
+            Console.WriteLine("=====================================");
+        }
+
+
+        private static void SeeAllAvailableVehicles()
+        {
+            ShowAllAvailableVehicles();
+           
+            Console.WriteLine("Do you want to make a reservation? Type Y or N");
             if (Utils.ReadYOrN())
             {
                 
@@ -87,7 +105,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
                 Console.WriteLine("=====================================");
                 Console.WriteLine("=          AUTOJOURNEY              =");
                 Console.WriteLine("=====================================");
-                Console.Write("Type your full name: ");
+                Console.Write("Type your email: ");
                 string email = Utils.ReadString("email");
                 Console.WriteLine("Type your password: ");
                 string password = Utils.ReadString();
@@ -97,7 +115,13 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
                 if (customerLoggedIn != null)
                 {
                     _isCustomerLoggedIn = true;
-
+                    Console.Clear();
+                    Console.WriteLine("=====================================");
+                    Console.WriteLine("=          AUTOJOURNEY              =");
+                    Console.WriteLine("=====================================");
+                    Console.Write($"Welcome back, {customerLoggedIn.Name}");
+                    Thread.Sleep(3000);
+                    ShowLoggedInMenu();
                 }
             }
             
@@ -136,9 +160,60 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.UserInterface
                 return;
             }
             customerLoggedIn = customer;
+            Console.Clear();
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=          AUTOJOURNEY              =");
+            Console.WriteLine("=====================================");
             Console.WriteLine("=====================================");
             Console.Write($"Hello, {customerLoggedIn.Name}! All set. ");
             Thread.Sleep(3000);
+            ShowLoggedInMenu();
+        }
+
+        private static void ShowLoggedInMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("=====================================================");
+            Console.WriteLine("=                     AUTOJOURNEY                   =");
+            Console.WriteLine("=====================================================");
+            Console.WriteLine($"= Hello, {customerLoggedIn.Name}                   =");
+            Console.WriteLine("Please remind us want operation you'd like to perform");
+            Console.WriteLine("1 - Make a reservation");
+            Console.WriteLine("2 - See all your reservations");
+            Console.WriteLine("3 - Leave");
+            int op = Utils.ReadInteger(1,3);
+            switch(op)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("=====================================================");
+                    Console.WriteLine("=                     AUTOJOURNEY                   =");
+                    Console.WriteLine("=====================================================");
+                    Console.WriteLine("Would you like to check all available vehicles in");
+                    Console.WriteLine("general [1] or would you likt to specify a date [2]?");
+                    op = Utils.ReadInteger(1,2);
+                    DateTime from, to;
+                    switch( op ) { 
+                        case 1:
+                            ShowAllAvailableVehicles();
+                            break;
+                        case 2:
+                            Console.WriteLine("Please type the initial date in the format dd/mm/yyyy");
+                            from = Utils.ReadDateTime("future", DateTime.Now);
+                            Console.WriteLine("Please type the end date in the format dd/mm/yyyy");
+                            to = Utils.ReadDateTime("future", from);
+                            ShowAllAvailableVehiclesInTimePeriod(from, to);
+                            break;
+                    }
+                    Console.WriteLine("Please type the id of the vehicle you'd like to reserve");
+
+                    break;
+                case 2:
+                    break; 
+                case 3: 
+                    break;
+
+            }
         }
     }
 }
