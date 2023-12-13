@@ -10,7 +10,7 @@ Este é um projeto extra do módulo 2 (POO 1) do curso Back-end C# da AdaTech em
 - [Uso](#uso)
 - [Documentação](#documentação)
 - [Sobre a aplicação](#sobre-a-aplicação)
-- [Lógica do projeto explicada](#lógica-do-projeto-explicada)
+- [Lógica e estrutura do projeto explicada](#lógica-e-estrutura-do-projeto-explicada)
 
 
 ## Uso
@@ -30,7 +30,24 @@ Diagrama de casos de uso, diagrama de sequência, diagrama de classes e de estad
 
 
 
-## Lógica do projeto explicada
+## Lógica e estrutura do projeto explicada
 
-
+A estrutura do projeto foi dividida em 6 partes pastas:
+```
+root/
+|-- Data/ -> contém uma classe de acesso direto ao banco de dados e todos os arquivos de dados
+|
+|-- Exceptions/ -> contém exceções personalizadas
+|
+|-- Model/ -> contém classes de modelagem de entidades, incluindo enums
+|
+|-- Services/ -> contém classes que centralizam ações sobre determinado modelo (entidade) e que tem contato direito com os repositories (da pasta Data)
+|
+|-- UserInterface -> contém classes que controlam a lógica da interface do console
+|
+|-- Utilities -> contém uma única classe estática que contém métodos úteis
+|
+|-- Program.cs -> inicialização do projeto
+```
+Program inicia o programa, alimenta a base de dados e chama a LandingPage (da pasta UserInterface). A LandingPage redireciona para a interface devida de acordo com as escolhas do usuário. As classes de UserInterface apenas fazem solicitações às classes de Services, de forma a centralizar as ações.
 
