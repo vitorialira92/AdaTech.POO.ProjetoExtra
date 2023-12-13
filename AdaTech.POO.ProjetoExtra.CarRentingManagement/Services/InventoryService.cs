@@ -53,7 +53,7 @@ namespace AdaTech.POO.ProjetoExtra.CarRentingManagement.Services
 
             result.AddRange(GetAllAvailableVehicles());
 
-            return result;
+            return result.Distinct().ToList(); ;
 
         }
     }
