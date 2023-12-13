@@ -28,9 +28,7 @@ Diagrama de casos de uso, diagrama de sequência, diagrama de classes e de estad
 
 ## Sobre a aplicação
 
-Existem 5 temas: geografia, empresas, histórias, entretenimento e Taylor Swift. 
-A cada jogada, é solicitado que o usuário escolha um tema. Após escolher, uma palavra que não tenha sido escolhida ainda é sorteada para ser a nova palavra.
-O usuário tem 6 chances de erro, tem a possibilidade de saber quais letras ele já tentou e tem à disposição uma dica.
+
 
 ## Lógica do projeto explicada
 
