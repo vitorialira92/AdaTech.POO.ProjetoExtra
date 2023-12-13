@@ -24,11 +24,15 @@ Diagrama de casos de uso, diagrama de sequência, diagrama de classes e de estad
 
 ## Conceitos do módulo que foram aplicados
 
-1. 
+1. Orientação a objetos
+2. Encapsulamento
+3. Propriedades e atributos
+4. Herança
+5. Polimorfismo
 
 ## Sobre a aplicação
 
-
+O projeto se trata de um sistema para gerenciamento de aluguel de veículos. É possível utilizar o sistema sendo funcionário ou sendo cliente. O cliente pode reservar um veículo, criar sua conta, visualizar detalhes de suas reservas anteriores e visualizar todos os veículos disponíveis, podendo limitar em um período de tempo.
 
 ## Lógica e estrutura do projeto explicada
 
@@ -49,5 +53,5 @@ root/
 |
 |-- Program.cs -> inicialização do projeto
 ```
-Program inicia o programa, alimenta a base de dados e chama a LandingPage (da pasta UserInterface). A LandingPage redireciona para a interface devida de acordo com as escolhas do usuário. As classes de UserInterface apenas fazem solicitações às classes de Services, de forma a centralizar as ações.
+Program inicia o programa, alimenta a base de dados e chama a LandingPage (da pasta UserInterface). A LandingPage redireciona para a interface devida de acordo com as escolhas do usuário. As classes de UserInterface apenas fazem solicitações às classes de Services, de forma a centralizar as ações. Serviços se comunicam porém repositories não.
 
